@@ -109,7 +109,8 @@ def play_game(computer_board, player_board):
         print(result)
         if result == "Hit":
             scores["computer"] += 1
-    
+
+        print(f"Scores - Player: {scores['player']}, Computer: {scores['computer']}")
 
     if len(computer_board.ships) == 0:
         print("Congratualtions! All enemy ships destroyed!")
