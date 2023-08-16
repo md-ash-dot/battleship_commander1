@@ -44,6 +44,12 @@ def random_point(size):
     """
     return randint(0, size - 1)
 
+def populate_board(board):
+    """
+    The game board is populated.
+    """
+    
+
         
 def new_game():
     """
@@ -63,7 +69,11 @@ def new_game():
     computer_board = Board(size,num_ships, "Computer", type="computer")
     player_board = Board(size,num_ships, player_name, type="player")
 
+    for _ in range(num_ships):
+        populate_board(player_board)
+        populate_board(computer_board)
 
+    
 
 new_game()
 
