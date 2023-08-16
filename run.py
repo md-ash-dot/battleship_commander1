@@ -54,7 +54,13 @@ def populate_board(board):
     """
     The game board is populated.
     """
-    
+    for _ in range(board.num_ships):
+        while True:
+            x = random_point(size)
+            y = random_point(size)
+            if valid_coordinates(x, y, board) and (x, y) not in board.ships:
+                board.add_ships(x, y)
+                break
 
 
 def random_point(size):
