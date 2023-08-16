@@ -141,6 +141,7 @@ def new_game():
         populate_board(computer_board)
 
     play_game(computer_board, player_board)
+    print(f"Final Scores - Player: {scores['player']}, Computer: {scores['computer']}")
 
 
 new_game()
