@@ -2,10 +2,12 @@ from random import randint
 
 scores = {"computer": 0, "player": 0}
 
+
 class Board:
     """
     The Board class, sets the board size, the number of ships,
-    player's name, board type.
+    player's name, board type (player board or computer)
+    Has methods for adding ships and guesses and printing the board.
     """
     
     def __init__(self, size, num_ships, name, type):
