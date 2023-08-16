@@ -20,7 +20,7 @@ class Board:
         self.ships = []
 
     def guess(self, x, y):
-        self.guesses.append((x,y))
+        self.guesses.append((x, y))
 
         if (x, y) in self.ships:
             self.board[x][y] = "*"
@@ -33,9 +33,14 @@ class Board:
         if len(self.ships) >= self.num_ships:
             print("Error: you cannot add any more ships!")
         else:
-            self.ships.append((x,y))
+            self.ships.append((x, y))
             if self.board_type == "player":
                 self.board[x][y] = "@"
+    
+    def print_board(self):
+        for row in self.board:
+            print(" ".join(row))
+        print()
 
 
 
