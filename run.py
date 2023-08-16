@@ -43,6 +43,16 @@ class Board:
         print()
 
 
+def valid_coordinates():
+    """
+    
+    """
+
+
+def populate_board(board):
+    """
+    The game board is populated.
+    """
 
 
 def random_point(size):
@@ -51,11 +61,17 @@ def random_point(size):
     """
     return randint(0, size - 1)
 
-def populate_board(board):
-    """
-    The game board is populated.
+
+def make_guess(board):
     """
 
+    """
+
+
+def play_game():
+    """
+    
+    """
     
 
         
