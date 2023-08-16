@@ -81,7 +81,7 @@ def make_guess(board):
             if valid_coordinates(x, y, board) and (x, y) not in board.guesses:
                 return x, y
             else:
-                print("Invalid guess, try again.")
+                print("You have already guessed these coordinates, try again.")
         except ValueError:
             print("Invalid input, enter numbers.")
 
