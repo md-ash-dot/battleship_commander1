@@ -91,12 +91,12 @@ def play_game(computer_board, player_board):
     Plays the game.
     """
     while len(computer_board.ships) > 0 and len(player_board.ships) > 0:
-        print("Player's board:\n")
+        print("{player_name}'s board:\n")
         player_board.print_board()
         print("Computer's board:\n")
         computer_board.print_board()
 
-        print("Player's turn:")
+        print("{player_name}'s turn:")
         x,y = make_guess(computer_board)
         result = computer_board.guess(x, y)
         print(result)
@@ -110,7 +110,7 @@ def play_game(computer_board, player_board):
         if result == "Hit":
             scores["computer"] += 1
 
-        print(f"Scores - Player: {scores['player']}, Computer: {scores['computer']}\n")
+        print(f"Scores - {player_name}: {scores['player']}, Computer: {scores['computer']}\n")
 
     if len(computer_board.ships) == 0:
         print("Congratualtions! All enemy ships destroyed!")
@@ -126,14 +126,16 @@ def new_game():
 
     size = 5
     num_ships = 4
-    print("Welcome to Battleship Commander!")
+    print("Welcome to Battleship Commander!\n")
     print("You are the Commander in charge, sink all enemy ships.")
-    print("Awaiting your command to strike at coordinates specified by you.")
+    print("Awaiting your command to strike at coordinates specified by you.\n")
     player_name = input("Please enter your name Commander: ")
+    print("-" * 30)
     print(f"Welcome aboard Commander {player_name}\n")
     print(f"Number of ships: {num_ships}, Board size: {size}")
     print(f"LEGEND: @ ->{player_name}'s ship, * ->Ship Destroyed" )
     print(f"The top left is row-0 column-0\n")
+    print("-" * 30)
 
     computer_board = Board(size, num_ships, "Computer", board_type="computer")
     player_board = Board(size, num_ships, player_name, board_type="player")
@@ -142,7 +144,7 @@ def new_game():
     populate_board(computer_board)
 
     play_game(computer_board, player_board)
-    print(f"Final Scores - Player: {scores['player']}, Computer: {scores['computer']}")
+    print(f"Final Scores - {player_name}: {scores['player']}, Computer: {scores['computer']}")
 
 
 new_game()
