@@ -57,20 +57,20 @@ def populate_board(board):
 
 def random_point(size):
     """
-    Helper function to return a random integer between 0 and size
+    Helper function to return a random integer between 0 and size.
     """
     return randint(0, size - 1)
 
 
 def make_guess(board):
     """
-
+    Take player's guess.
     """
 
 
 def play_game():
     """
-
+    Plays the game.
     """
     
 
