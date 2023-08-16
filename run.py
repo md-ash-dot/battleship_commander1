@@ -15,4 +15,8 @@ class Board:
         self.guesses = []
         self.ships = []
 
-    
+    def guess(self, x, y):
+        self.guesses.append((x,y))
+        self.board[x][y] = "X"
+
+        
