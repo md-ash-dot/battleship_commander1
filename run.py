@@ -76,8 +76,8 @@ def make_guess(board):
     """
     while True:
         try:
-            x = input("Enter row:")
-            y = input("Enter column:")
+            x = int(input("Enter row:"))
+            y = int(input("Enter column:"))
             if valid_coordinates(x, y, board) and (x, y) not in board.guesses:
                 return x, y
             else:
@@ -96,12 +96,19 @@ def play_game(computer_board, player_board):
         print("Computer's board:")
         computer_board.print_board()
 
-    print("Player's turn:")
-    x,y = make_guess(computer_board)
-    result = computer_board.guess(x, y)
-    print(result)
-    if result == "Hit":
-        scores["player"] += 1
+        print("Player's turn:")
+        x,y = make_guess(computer_board)
+        result = computer_board.guess(x, y)
+        print(result)
+        if result == "Hit":
+            scores["player"] += 1
+
+        print("Computer's turn:")
+        x,y = random_point(player_board.size), random_point(player_board.size)
+        result = player_board.guess(x, y)
+        print(result)
+        if result == "Hit":
+            scores["computer"] += 1
     
 
     if len(computer_board.ships) == 0:
