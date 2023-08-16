@@ -48,6 +48,9 @@ def random_point(size):
 def new game():
     """
     Starts a new game, sets the board size and number of ships, 
-    resets the scores and initialises the boards.
+    resets the scores and initialises the board.
     """
+
+    size = 5
+    num_ships=4
 
