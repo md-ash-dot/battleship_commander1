@@ -53,4 +53,9 @@ def new game():
 
     size = 5
     num_ships=4
+    print("Welcome to Battleship Commander!")
+    print("You are the Commander in charge, sink all enemy ships.")
+    print("Awaiting your command to strike at coordinates specified by you.")
+    
+    
 
