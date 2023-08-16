@@ -56,6 +56,8 @@ def new game():
     print("Welcome to Battleship Commander!")
     print("You are the Commander in charge, sink all enemy ships.")
     print("Awaiting your command to strike at coordinates specified by you.")
-    
+    player_name = input("Please enter your name Commander: ")
+    print(f"Welcome aboard Commander {player_name}")
+    print(f"Number of ships: {num_ships}, Board size: {size}")
     
 
