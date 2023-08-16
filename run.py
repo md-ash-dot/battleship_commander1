@@ -48,6 +48,14 @@ def populate_board(board):
     """
     The game board is populated.
     """
+    for _ in range(board.num_ships):
+        x = random_point(board.size)
+        y = random_point(board.size)
+        while (x, y) in board.ships:
+            x = random_point(board.size)
+            y = random_point(board.size)
+        board.add_ship(x, y, board.type)
+
     
 
         
@@ -58,7 +66,7 @@ def new_game():
     """
 
     size = 5
-    num_ships=4
+    num_ships=2
     print("Welcome to Battleship Commander!")
     print("You are the Commander in charge, sink all enemy ships.")
     print("Awaiting your command to strike at coordinates specified by you.")
