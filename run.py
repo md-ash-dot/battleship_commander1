@@ -91,9 +91,9 @@ def play_game(computer_board, player_board):
     Plays the game.
     """
     while len(computer_board.ships) > 0 and len(player_board.ships) > 0:
-        print("Player's board:")
+        print("Player's board:\n")
         player_board.print_board()
-        print("Computer's board:")
+        print("Computer's board:\n")
         computer_board.print_board()
 
         print("Player's turn:")
@@ -110,7 +110,7 @@ def play_game(computer_board, player_board):
         if result == "Hit":
             scores["computer"] += 1
 
-        print(f"Scores - Player: {scores['player']}, Computer: {scores['computer']}")
+        print(f"Scores - Player: {scores['player']}, Computer: {scores['computer']}\n")
 
     if len(computer_board.ships) == 0:
         print("Congratualtions! All enemy ships destroyed!")
@@ -132,8 +132,8 @@ def new_game():
     player_name = input("Please enter your name Commander: ")
     print(f"Welcome aboard Commander {player_name}\n")
     print(f"Number of ships: {num_ships}, Board size: {size}")
-    print(f"@ - {player_name}'s ship, * - Ship Destroyed" )
-    print(f"The top left is row-0 column-0")
+    print(f"LEGEND: @ ->{player_name}'s ship, * ->Ship Destroyed" )
+    print(f"The top left is row-0 column-0\n")
 
     computer_board = Board(size, num_ships, "Computer", board_type="computer")
     player_board = Board(size, num_ships, player_name, board_type="player")
