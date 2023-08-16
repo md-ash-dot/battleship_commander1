@@ -136,9 +136,8 @@ def new_game():
     computer_board = Board(size, num_ships, "Computer", board_type="computer")
     player_board = Board(size, num_ships, player_name, board_type="player")
 
-    for _ in range(num_ships):
-        populate_board(player_board)
-        populate_board(computer_board)
+    populate_board(player_board)
+    populate_board(computer_board)
 
     play_game(computer_board, player_board)
     print(f"Final Scores - Player: {scores['player']}, Computer: {scores['computer']}")
