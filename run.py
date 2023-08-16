@@ -47,6 +47,7 @@ def valid_coordinates():
     """
     The coordinates are checked to see if it is  valid.
     """
+    return 0 <= x < size and 0 <= y < size
 
 
 def populate_board(board):
@@ -82,7 +83,7 @@ def new_game():
     """
 
     size = 5
-    num_ships=2
+    num_ships = 2
     print("Welcome to Battleship Commander!")
     print("You are the Commander in charge, sink all enemy ships.")
     print("Awaiting your command to strike at coordinates specified by you.")
@@ -90,14 +91,13 @@ def new_game():
     print(f"Welcome aboard Commander {player_name}")
     print(f"Number of ships: {num_ships}, Board size: {size}")
 
-    computer_board = Board(size,num_ships, "Computer", board_type="computer")
-    player_board = Board(size,num_ships, player_name, board_type="player")
+    computer_board = Board(size, num_ships, "Computer", board_type="computer")
+    player_board = Board(size, num_ships, player_name, board_type="player")
 
     for _ in range(num_ships):
         populate_board(player_board)
         populate_board(computer_board)
 
-    
 
 new_game()
 
