@@ -43,17 +43,18 @@ class Board:
         print()
 
 
-def valid_coordinates():
+def valid_coordinates(x, y, board):
     """
     The coordinates are checked to see if it is  valid.
     """
-    return 0 <= x < size and 0 <= y < size
+    return 0 <= x < board.size and 0 <= y < board.size
 
 
 def populate_board(board):
     """
     The game board is populated.
     """
+    
 
 
 def random_point(size):
