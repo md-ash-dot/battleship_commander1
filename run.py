@@ -59,7 +59,7 @@ def populate_board(board):
             x = random_point(board.size)
             y = random_point(board.size)
             if valid_coordinates(x, y, board) and (x, y) not in board.ships:
-                board.add_ships(x, y)
+                board.add_ship(x, y)
                 break
 
 
@@ -86,13 +86,22 @@ def make_guess(board):
             print("Invalid input, enter numbers.")
 
 
-def play_game():
+def play_game(computer_board, player_board):
     """
     Plays the game.
     """
-    
+    while len(computer_board.ships) > 0 and len(player_board.ships) > 0:
+        print("Player's board:")
+        player_board.print_board()
+        print("Computer's board:")
+        computer_board.print_board()
 
-        
+    if len(computer_board.ships) == 0:
+        print("Congratualtions! All enemy ships destroyed!")
+    elif len(player_board.ships) == 0:
+        print("Computer has won! You have lost the battle!")
+    
+  
 def new_game():
     """
     Starts a new game, sets the board size and number of ships, 
@@ -114,6 +123,8 @@ def new_game():
     for _ in range(num_ships):
         populate_board(player_board)
         populate_board(computer_board)
+
+    play_game(computer_board, player_board)
 
 
 new_game()
