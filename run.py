@@ -45,7 +45,7 @@ class Board:
 
 def valid_coordinates():
     """
-    
+    The coordinates are checked to see if it is  valid.
     """
 
 
@@ -70,7 +70,7 @@ def make_guess(board):
 
 def play_game():
     """
-    
+
     """
     
 
