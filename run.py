@@ -125,13 +125,15 @@ def new_game():
     """
 
     size = 5
-    num_ships = 2
+    num_ships = 4
     print("Welcome to Battleship Commander!")
     print("You are the Commander in charge, sink all enemy ships.")
     print("Awaiting your command to strike at coordinates specified by you.")
     player_name = input("Please enter your name Commander: ")
-    print(f"Welcome aboard Commander {player_name}")
+    print(f"Welcome aboard Commander {player_name}\n")
     print(f"Number of ships: {num_ships}, Board size: {size}")
+    print(f"@ - {player_name}'s ship, * - Ship Destroyed" )
+    print(f"The top left is row-0 column-0")
 
     computer_board = Board(size, num_ships, "Computer", board_type="computer")
     player_board = Board(size, num_ships, player_name, board_type="player")
