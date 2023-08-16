@@ -45,7 +45,7 @@ def random_point(size):
     return randint(0, size - 1)
 
         
-def new game():
+def new_game():
     """
     Starts a new game, sets the board size and number of ships, 
     resets the scores and initialises the board.
@@ -59,5 +59,11 @@ def new game():
     player_name = input("Please enter your name Commander: ")
     print(f"Welcome aboard Commander {player_name}")
     print(f"Number of ships: {num_ships}, Board size: {size}")
-    
+
+    computer_board = Board(size,num_ships, "Computer", type="computer")
+    player_board = Board(size,num_ships, player_name, type="player")
+
+
+
+new_game()
 
