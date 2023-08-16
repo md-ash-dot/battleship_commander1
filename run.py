@@ -96,6 +96,14 @@ def play_game(computer_board, player_board):
         print("Computer's board:")
         computer_board.print_board()
 
+    print("Player's turn:")
+    x,y = make_guess(computer_board)
+    result = computer_board.guess(x, y)
+    print(result)
+    if result == "Hit":
+        scores["player"] += 1
+    
+
     if len(computer_board.ships) == 0:
         print("Congratualtions! All enemy ships destroyed!")
     elif len(player_board.ships) == 0:
