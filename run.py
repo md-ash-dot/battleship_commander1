@@ -10,12 +10,12 @@ class Board:
     Has methods for adding ships and guesses and printing the board.
     """
     
-    def __init__(self, size, num_ships, name, type):
+    def __init__(self, size, num_ships, name, board_type):
         self.size = size
-        self.board = [["." for x in range(size)] for y in range(size)]
+        self.board = [["." for _ in range(size)] for _ in range(size)]
         self.num_ships = num_ships
         self.name = name
-        self.type = type 
+        self.board_type = board_type 
         self.guesses = []
         self.ships = []
 
@@ -29,13 +29,7 @@ class Board:
         else:
             return "Miss"
 
-    def add_ship(self, x, y, type="computer"):
-        if len(self.ships) >= self.num_ships:
-            print("Error: you cannot add any more ships!")
-        else:
-            self.ships.append((x,y))
-            if self.type == "player":
-                self.board[x][y] = "@"
+
 
 
 def random_point(size):
@@ -48,13 +42,6 @@ def populate_board(board):
     """
     The game board is populated.
     """
-    for _ in range(board.num_ships):
-        x = random_point(board.size)
-        y = random_point(board.size)
-        while (x, y) in board.ships:
-            x = random_point(board.size)
-            y = random_point(board.size)
-        board.add_ship(x, y, board.type)
 
     
 
@@ -74,8 +61,8 @@ def new_game():
     print(f"Welcome aboard Commander {player_name}")
     print(f"Number of ships: {num_ships}, Board size: {size}")
 
-    computer_board = Board(size,num_ships, "Computer", type="computer")
-    player_board = Board(size,num_ships, player_name, type="player")
+    computer_board = Board(size,num_ships, "Computer", board_type="computer")
+    player_board = Board(size,num_ships, player_name, board_type="player")
 
     for _ in range(num_ships):
         populate_board(player_board)
