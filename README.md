@@ -17,18 +17,25 @@ Battleship Commander is based on the classic pen and paper game. You can read ab
  - Random board generation: Ships are randomly placed on the computer and player board, adding an element of surprise and strategy to each game session.
  - Grid Board with Visualization: The game is played on a grid-based board, visually representing the ocean with coordinates. This layout immerses players in the classic naval battle experience.
  ![Player board](/images/player%20board.JPG)
+
  - Instructions and Game Rules: A concise set of instructions guides players through the gameplay mechanics, rules, and objectives, ensuring a clear understanding of how to engage in the battle.
  ![Instructions](/images/instructions.JPG)
+
  -Immersive Welcome Message: The game begins with a personalized welcome message that creates a sense of involvement and prepares players for the upcoming strategic challenge.
  ![Welcome message](/images/welcome%20message.JPG)
+
  -Player Identification: Players are prompted to enter their name at the start, which is then incorporated into messages, enhancing the feeling of commanding a fleet.
  ![Request name](/images/request%20name.JPG)
+
  -Scores Tracking: After each round, the game displays updated scores for both the player and the computer, fostering a competitive spirit and tracking progress.
  ![Scores](/images/scores.JPG)
+
  -Invalid Input Handling: The game actively addresses invalid inputs by notifying players about their mistakes and prompting them to retry, maintaining a smooth and user-friendly experience.
  ![Invalid input](/images/invalid%20input.JPG)
+
  -Valid Coordinates Enforcement: When players provide coordinates, the game ensures that they are within the bounds of the game board and not previously guessed, maintaining fairness and accuracy.
  ![Invalid coordinates](/images/invalid%20input%202.JPG)
+ 
  -Hit and Miss Visual Feedback: The game visually indicates whether a guess was a hit or a miss on the grid, allowing players to assess their progress and refine their strategy accordingly.
 
 ### Future Features
