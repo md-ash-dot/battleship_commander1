@@ -99,10 +99,12 @@ def play_game(computer_board, player_board):
         x, y = make_guess(computer_board)
         result = computer_board.guess(x, y)
         print(result)
+        current_computer_ships = len(computer_board.ships)
         if result == "Hit":
             scores["player"] += 1
+            computer_board.ships.remove((x, y))
 
-        if len(computer_board.ships) == 0:
+        if current_computer_ships == 0:
             print("Congratualtions! All enemy ships destroyed!")
             break
 
@@ -110,10 +112,12 @@ def play_game(computer_board, player_board):
         x, y = random_point(player_board.size), random_point(player_board.size)
         result = player_board.guess(x, y)
         print(result)
+        current_player_ships = len(player_board.ships)
         if result == "Hit":
             scores["computer"] += 1
+            player_board.ships.remove((x, y))
 
-        if len(player_board.ships) == 0:
+        if current_player_ships == 0:
             print("Computer has won! You have lost the battle!")
             break
 
