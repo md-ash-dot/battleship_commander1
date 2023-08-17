@@ -70,6 +70,8 @@ I have manually tested this project by doing the following:
 -->The quotes used inside the f string caused the error. The opposite quotes were used inside the f string to correct it.
 - Kept getting Error: you cannot add any more ships!, while starting game.
 -->The populate_board was being called multiple times. The code was changed to call it only once, to corecct it.
+- The game did not end even after all ships on a player's board were destroyed.
+-->The function did not check the current number of ships. The play game function was used to check and end game if all ships on a board were destroyed.
 
 ## Remaining Bugs
 - No bugs remaining
