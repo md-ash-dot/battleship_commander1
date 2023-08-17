@@ -2,7 +2,7 @@ from random import randint
 
 scores = {"computer": 0, "player": 0}
 
-
+# Some of the code taken from studying the portfolio project 3 intro video by Code Institute 
 class Board:
     """
     The Board class, sets the board size, the number of ships,
