@@ -81,7 +81,7 @@ def make_guess(board):
             if valid_coordinates(x, y, board) and (x, y) not in board.guesses:
                 return x, y
             else:
-                print("You have already guessed these coordinates, try again.")
+                print("Invalid input, please try again.")
         except ValueError:
             print("Invalid input, enter numbers.")
 
@@ -102,6 +102,10 @@ def play_game(computer_board, player_board):
         print(result)
         if result == "Hit":
             scores["player"] += 1
+        
+        if len(computer_board.ships) == 0:
+            print("Congratualtions! All enemy ships destroyed!")
+            break
 
         print("Computer's turn:")
         x,y = random_point(player_board.size), random_point(player_board.size)
@@ -110,12 +114,15 @@ def play_game(computer_board, player_board):
         if result == "Hit":
             scores["computer"] += 1
 
+        if len(player_board.ships) == 0:
+            print("Computer has won! You have lost the battle!")
+            break
+        
+        print("-" * 50)
         print(f"Scores - Player: {scores['player']}, Computer: {scores['computer']}\n")
+        print("-" * 50)
 
-    if len(computer_board.ships) == 0:
-        print("Congratualtions! All enemy ships destroyed!")
-    elif len(player_board.ships) == 0:
-        print("Computer has won! You have lost the battle!")
+    print("GAME OVER")
     
   
 def new_game():
@@ -130,12 +137,15 @@ def new_game():
     print("You are the Commander in charge, sink all enemy ships.")
     print("Awaiting your command to strike at coordinates specified by you.\n")
     player_name = input("Please enter your name Commander: ")
-    print('"-" * 30\n')
+    print("-" * 50)
     print(f"Welcome aboard Commander {player_name}\n")
     print(f"Number of ships: {num_ships}, Board size: {size}")
     print(f"LEGEND: @ ---> {player_name}'s ship, * ---> Destroyed ship" )
-    print(f"The top left coordinate is row-0 column-0\n")
-    print('"-" * 30\n')
+    print("The top left coordinate is row-0 column-0")
+    print("The bottom right coordinate is row-4 column-4")
+    print("Rows and columns go from 0 to 4") 
+    print("You cannot guess the same coordinate more than once.")
+    print("-" * 50)
 
     computer_board = Board(size, num_ships, "Computer", board_type="computer")
     player_board = Board(size, num_ships, player_name, board_type="player")
