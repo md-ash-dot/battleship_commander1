@@ -142,7 +142,7 @@ def new_game():
     print("Awaiting your command to strike at coordinates specified by you.\n")
     player_name = input("Please enter your name Commander: ")
     print("-" * 50)
-    print(f"Welcome aboard Commander {player_name}\n")
+    print(f"Welcome aboard Commander {player_name}")
     print(f"Number of ships: {num_ships}, Board size: {size}")
     print(f"LEGEND: @ ---> {player_name}'s ship, * ---> Destroyed ship")
     print("The top left coordinate is row-0 column-0")
