@@ -90,9 +90,9 @@ def play_game(computer_board, player_board):
     Plays the game.
     """
     while len(computer_board.ships) > 0 and len(player_board.ships) > 0:
-        print("Player's board:\n")
+        print("Player's board:")
         player_board.print_board()
-        print("Computer's board:\n")
+        print("Computer's board:")
         computer_board.print_board()
 
         print("Player's turn:")
