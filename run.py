@@ -123,7 +123,7 @@ def play_game(computer_board, player_board):
 
         print("-" * 50)
         print(f"Scores - Player: {scores['player']}")
-        print(f"Computer: {scores['computer']}\n")
+        print(f"Computer: {scores['computer']}")
         print("-" * 50)
 
     print("GAME OVER")
