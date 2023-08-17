@@ -9,7 +9,6 @@ class Board:
     player's name, board type (player board or computer)
     Has methods for adding ships and guesses and printing the board.
     """
-    
     def __init__(self, size, num_ships, name, board_type):
         self.size = size
         self.board = [["." for _ in range(size)] for _ in range(size)]
@@ -36,7 +35,7 @@ class Board:
             self.ships.append((x, y))
             if self.board_type == "player":
                 self.board[x][y] = "@"
-    
+
     def print_board(self):
         for row in self.board:
             print(" ".join(row))
@@ -97,18 +96,18 @@ def play_game(computer_board, player_board):
         computer_board.print_board()
 
         print("Player's turn:")
-        x,y = make_guess(computer_board)
+        x, y = make_guess(computer_board)
         result = computer_board.guess(x, y)
         print(result)
         if result == "Hit":
             scores["player"] += 1
-        
+
         if len(computer_board.ships) == 0:
             print("Congratualtions! All enemy ships destroyed!")
             break
 
         print("Computer's turn:")
-        x,y = random_point(player_board.size), random_point(player_board.size)
+        x, y = random_point(player_board.size), random_point(player_board.size)
         result = player_board.guess(x, y)
         print(result)
         if result == "Hit":
@@ -117,17 +116,18 @@ def play_game(computer_board, player_board):
         if len(player_board.ships) == 0:
             print("Computer has won! You have lost the battle!")
             break
-        
+
         print("-" * 50)
-        print(f"Scores - Player: {scores['player']}, Computer: {scores['computer']}\n")
+        print(f"Scores - Player: {scores['player']})
+        print(f"Computer: {scores['computer']}\n")
         print("-" * 50)
 
     print("GAME OVER")
-    
-  
+
+
 def new_game():
     """
-    Starts a new game, sets the board size and number of ships, 
+    Starts a new game, sets the board size and number of ships,
     resets the scores and initialises the board.
     """
 
@@ -140,10 +140,10 @@ def new_game():
     print("-" * 50)
     print(f"Welcome aboard Commander {player_name}\n")
     print(f"Number of ships: {num_ships}, Board size: {size}")
-    print(f"LEGEND: @ ---> {player_name}'s ship, * ---> Destroyed ship" )
+    print(f"LEGEND: @ ---> {player_name}'s ship, * ---> Destroyed ship")
     print("The top left coordinate is row-0 column-0")
     print("The bottom right coordinate is row-4 column-4")
-    print("Rows and columns go from 0 to 4") 
+    print("Rows and columns go from 0 to 4")
     print("You cannot guess the same coordinate more than once.")
     print("-" * 50)
 
@@ -154,8 +154,8 @@ def new_game():
     populate_board(computer_board)
 
     play_game(computer_board, player_board)
-    print(f"Final Scores - Player: {scores['player']}, Computer: {scores['computer']}")
+    print("Final Scores")
+    print(f"Player: {scores['player']}, Computer: {scores['computer']}")
 
 
 new_game()
-
